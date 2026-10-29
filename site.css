@@ -149,3 +149,6 @@ body.home .actions #flip{width:auto;padding:0 18px;border-radius:999px}
   body.home .actions{justify-content:center}
   body.home .actions .grow{flex:none;padding:0 28px}
 }
+
+/* About page: no glow */
+body.about{background-image:none}
