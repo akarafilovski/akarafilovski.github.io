@@ -122,3 +122,24 @@ body.home .face{box-shadow:0 0 0 1px var(--line),0 24px 90px -26px var(--aglow),
 
 .btn .lbl{display:inline}
 body.home .actions #flip{width:auto;padding:0 18px;border-radius:999px}
+
+/* phone in landscape: very short window. The card gets a compact two-column layout and the page may scroll a little. */
+@media (orientation:landscape) and (max-height:519px){
+  html,body{height:auto}
+  body.home{overflow:auto}
+  body.home .wrap{height:auto;min-height:100dvh;max-width:700px;gap:10px;padding-block:10px}
+  body.home .stage{flex:0 0 auto;display:block}
+  body.home .card{width:min(640px,100%);height:auto;max-height:none;aspect-ratio:2/1;min-height:270px;margin:0 auto}
+  body.home #front{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);grid-template-rows:auto 1fr auto auto;column-gap:24px;padding:16px 24px}
+  body.home #front .row{grid-column:1/-1;flex-direction:row-reverse}
+  body.home #front .mark{width:40px;height:40px}
+  body.home #front .name{grid-column:1/-1;grid-row:2;align-self:end;margin:0 0 4px;font-size:30px}
+  body.home #front .role{grid-column:1/-1;grid-row:3;margin:0 0 10px;font-size:12px}
+  body.home #front dl{grid-column:1;grid-row:4;margin:0;font-size:12px;align-self:end}
+  body.home #front .stack{grid-column:2;grid-row:4;align-self:end;text-align:right}
+  body.home #front .bars{justify-content:flex-end}
+  body.home .actions{width:min(640px,100%);margin:0 auto;gap:8px}
+  body.home .actions .btn{min-height:40px;font-size:14px;padding:0 16px}
+  body.home .actions .btn.round{width:40px;padding:0}
+  body.home .back .mark{width:72px;height:72px}
+}
