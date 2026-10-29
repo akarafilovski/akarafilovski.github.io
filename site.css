@@ -144,6 +144,8 @@ body.home .actions #flip{width:auto;padding:0 18px;border-radius:999px}
   body.home .back .mark{width:72px;height:72px}
 }
 
-/* buttons: normal size, centred row on every screen */
-body.home .actions{justify-content:center}
-body.home .actions .grow{flex:none;padding:0 28px}
+/* buttons: portrait phones keep the three buttons across the card; desktop and phones in landscape get a compact centred row */
+@media (min-width:900px) and (min-height:520px), (orientation:landscape) and (max-height:519px){
+  body.home .actions{justify-content:center}
+  body.home .actions .grow{flex:none;padding:0 28px}
+}
