@@ -89,13 +89,36 @@ body.home .card{width:100%;max-height:720px}
   body.home .wrap{max-width:820px;justify-content:center}
   body.home .stage{flex:0 0 auto}
   body.home .card{width:min(760px,100%);height:auto;max-height:none;aspect-ratio:7/4}
-  body.home .front{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr auto auto;column-gap:32px;padding:30px 36px}
-  body.home .front .row{grid-column:1/-1}
-  body.home .front .name{grid-column:1;grid-row:2;align-self:end;margin:0 0 8px;font-size:clamp(34px,4.4vw,50px)}
-  body.home .front .role{grid-column:1;grid-row:3;margin:0 0 16px}
-  body.home .front .stack{grid-column:1;grid-row:4}
-  body.home .front dl{grid-column:2;grid-row:2/5;align-self:end;margin:0;font-size:14px}
+  body.home #front{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr auto auto;column-gap:32px;padding:30px 36px}
+  body.home #front .row{grid-column:1/-1;flex-direction:row-reverse}
+  body.home #front .name{grid-column:1/-1;grid-row:2;align-self:end;margin:0 0 8px;font-size:clamp(34px,4.6vw,52px)}
+  body.home #front .role{grid-column:1/-1;grid-row:3;margin:0 0 clamp(18px,4vh,34px)}
+  body.home #front dl{grid-column:1;grid-row:4;align-self:end;margin:0;font-size:14px}
+  body.home #front .stack{grid-column:2;grid-row:4;align-self:end;text-align:right}
+  body.home #front .bars{justify-content:flex-end}
   body.home .back .mark{width:110px;height:110px}
   body.home .actions{width:min(760px,100%);margin:0 auto;flex:none}
   body.home footer{flex:none}
 }
+
+/* glow around the card */
+:root{--aglow:rgba(15,123,99,.28)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--aglow:rgba(126,224,195,.38)}}
+:root[data-theme="dark"]{--aglow:rgba(126,224,195,.38)}
+body.home .face{box-shadow:0 0 0 1px var(--line),0 24px 90px -26px var(--aglow),0 0 60px -30px var(--aglow)}
+
+/* desktop: smaller card, compact centred buttons (like trajce.com) */
+@media (min-width:900px) and (min-height:520px){
+  body.home .card{width:min(640px,100%);aspect-ratio:8/5}
+  body.home #front{padding:26px 32px;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}
+  body.home #front .name{font-size:clamp(30px,3.8vw,44px)}
+  body.home #front .mark{width:48px;height:48px}
+  body.home .actions{width:auto;justify-content:center;gap:8px}
+  body.home .actions .btn{min-height:40px;font-size:14px;padding:0 18px;flex:none}
+  body.home .actions .btn.round{width:40px;padding:0}
+  body.home .actions .grow{flex:none}
+  body.home .back .mark{width:96px;height:96px}
+}
+
+.btn .lbl{display:inline}
+body.home .actions #flip{width:auto;padding:0 18px;border-radius:999px}
