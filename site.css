@@ -145,8 +145,11 @@ body.home .actions #flip{width:auto;padding:0 18px;border-radius:999px}
   body.home .back .mark{width:64px;height:64px}
 }
 
-@media (orientation:landscape) and (max-height:519px) and (min-width:800px){
+@media (orientation:landscape) and (max-height:519px) and (min-width:700px) and (max-width:799px){
   body.home .card{aspect-ratio:2/1;height:min(100%,calc((100vw - 232px) / 2))}
+}
+@media (orientation:landscape) and (max-height:519px) and (min-width:800px){
+  body.home .card{aspect-ratio:2.4/1;height:min(100%,calc((100vw - 232px) / 2.4))}
   body.home #front dl{grid-column:1}
   body.home #front .stack{display:block;grid-column:2;grid-row:4;align-self:end;text-align:right;font-size:10.5px}
   body.home #front .bars{justify-content:flex-end}
