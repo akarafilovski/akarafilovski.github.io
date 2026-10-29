@@ -130,10 +130,11 @@ body.home .actions #flip{width:auto;padding:0 18px;border-radius:999px}
   body.home .card{width:auto;height:auto;max-height:100%;max-width:100%;aspect-ratio:8/5;height:min(100%,calc((100vw - 232px) / 1.6))}
   body.home #front{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);grid-template-rows:auto 1fr auto auto;column-gap:16px;padding:14px 20px}
   body.home #front .row{grid-column:1/-1;flex-direction:row-reverse}
-  body.home #front .mark{width:34px;height:34px}
-  body.home #front .name{grid-column:1/-1;grid-row:2;align-self:end;margin:0 0 4px;font-size:clamp(22px,4.4vw,32px)}
-  body.home #front .role{grid-column:1/-1;grid-row:3;margin:0 0 8px;font-size:11px}
-  body.home #front dl{grid-column:1/-1;grid-row:4;margin:0;font-size:11.5px;gap:4px 12px}
+  body.home #front .mark{width:clamp(34px,7cqw,52px);height:clamp(34px,7cqw,52px)}
+  body.home .card{container-type:size}
+  body.home #front .name{grid-column:1/-1;grid-row:2;align-self:end;margin:0 0 6px;font-size:calc((100cqw - 44px) / 13.2);white-space:nowrap}
+  body.home #front .role{grid-column:1/-1;grid-row:3;margin:0 0 clamp(8px,3cqh,18px);font-size:clamp(11px,2cqw,14px)}
+  body.home #front dl{grid-column:1/-1;grid-row:4;margin:0;font-size:clamp(11.5px,2.1cqw,15px);gap:clamp(4px,1.4cqh,9px) 14px}
   body.home #front .stack{display:none}
   body.home .actions{grid-column:2;grid-row:1;align-self:center;display:grid;grid-template-columns:44px 1fr;gap:8px;width:auto;margin:0}
   body.home .actions .grow{grid-column:1/-1;grid-row:1;order:0}
@@ -145,7 +146,8 @@ body.home .actions #flip{width:auto;padding:0 18px;border-radius:999px}
 }
 
 @media (orientation:landscape) and (max-height:519px) and (min-width:800px){
-  body.home #front dl{grid-column:1;font-size:12.5px}
+  body.home .card{aspect-ratio:2/1;height:min(100%,calc((100vw - 232px) / 2))}
+  body.home #front dl{grid-column:1}
   body.home #front .stack{display:block;grid-column:2;grid-row:4;align-self:end;text-align:right;font-size:10.5px}
   body.home #front .bars{justify-content:flex-end}
   body.home #front .bars i{width:34px;height:5px}
